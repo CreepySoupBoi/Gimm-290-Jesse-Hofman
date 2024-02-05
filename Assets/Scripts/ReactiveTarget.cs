@@ -6,6 +6,11 @@ public class ReactiveTarget : MonoBehaviour
 {
     public void ReactToHit()
     {
+        WalkingAI behavior = GetComponent<WalkingAI>();
+        if(behavior !=null)
+        {
+            behavior.SetAlive(false);
+        }
         StartCoroutine(Die());
     }
 
@@ -26,4 +31,5 @@ public class ReactiveTarget : MonoBehaviour
     {
         
     }
+
 }
